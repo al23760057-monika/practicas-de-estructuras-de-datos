@@ -19,4 +19,27 @@ cin<<"Introduce el nombre">>
   cout<<"Tu promedio es: ">>
 
   return 0;
+
+
+if promedio >= 9;
+  cout<<"Excelente ">>
+  else
+  promedio >= 7;
+  cout<<"Aprobado ">>
+  else
+  promedio >= 6;
+ cout<<"Regular ">>
+ promedio < 6;
+ cout<<"Reprobado ">>
+
+
+   if edad < 0  && edad > 120;
+ cout<<"Edad inválida ">>
+
+   return 1; 
+
+
+
+   
+
   
