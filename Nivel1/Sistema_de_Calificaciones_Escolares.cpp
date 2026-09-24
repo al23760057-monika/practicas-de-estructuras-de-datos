@@ -278,3 +278,37 @@ int main() {
                          << i << ": ";
                     cin >> calificacion;
 
+
+
+ do {
+
+        cout << "\n===== SISTEMA DE CALIFICACIONES =====" << endl;
+        cout << "1. Registrar estudiante" << endl;
+        cout << "2. Ver informacion del programa" << endl;
+        cout << "3. Salir" << endl;
+        cout << "4. Registrar otro estudiante" << endl;
+        cout << "Opcion: ";
+        cin >> opcion;
+
+      
+        while (opcion < 1 || opcion > 4) {
+            cout << "Opcion invalida." << endl;
+            cout << "Introduce una opcion del 1 al 4: ";
+            cin >> opcion;
+        }
+
+        switch (opcion) {
+
+            case 1: {
+                string nombre;
+                int edad;
+                int n;
+
+                float calificacion;
+                float suma = 0;
+                float promedio;
+                float calificacionAlta;
+                float calificacionBaja;
+
+                int aprobadas = 0;
+                int reprobadas = 0;
