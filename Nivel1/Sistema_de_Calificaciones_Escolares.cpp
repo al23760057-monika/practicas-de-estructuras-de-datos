@@ -228,8 +228,53 @@ int main() {
 }
 
 
+               
+                cout << "Introduce la edad: ";
+                cin >> edad;
+
+                while (edad < 0 || edad > 30) {
+                    cout << "Edad invalida. ";
+                    cout << "Introduce una edad entre 0 y 30: ";
+                    cin >> edad;
+                }
 
 
-   
+                cout << "Calificaciones a registrar ";
+                cin >> n;
 
-  
+                while (n <= 0) {
+                    cout << "La cantidad debe ser mayor que 0: ";
+                    cin >> n;
+                }
+
+
+                cout << "Ingresa la calificacion : ";
+                cin >> calificacion;
+
+               
+                while (calificacion < 0 || calificacion > 100) {
+                    cout << "Calificacion invalida. ";
+                    cout << "Introduce una calificacion entre 0 y 100: ";
+                    cin >> calificacion;
+                }
+
+                suma = calificacion;
+
+                calificacionAlta = calificacion;
+                calificacionBaja = calificacion;
+
+                if (calificacion >= 70) {
+                    aprobadas++;
+                }
+                else {
+                    reprobadas++;
+                }
+
+
+            
+                for (int i = 2; i <= n; i++) {
+
+                    cout << "Introduce la calificacion "
+                         << i << ": ";
+                    cin >> calificacion;
+
