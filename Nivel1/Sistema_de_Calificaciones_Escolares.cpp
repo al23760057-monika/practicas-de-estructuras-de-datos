@@ -312,3 +312,4 @@ int main() {
 
                 int aprobadas = 0;
                 int reprobadas = 0;
+
