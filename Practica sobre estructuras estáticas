@@ -1,0 +1,142 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+   
+    char tablero[3][3];
+
+    for (int fila = 0; fila < 3; fila++) {
+        for (int columna = 0; columna < 3; columna++) {
+            tablero[fila][columna] = ' ';
+        }
+    }
+
+    char jugador = 'X';
+    int fila, columna;
+    int jugadas = 0;
+    bool ganador = false;
+
+   
+    while (jugadas < 9 && !ganador) {
+
+       
+        cout << "\n  1   2   3\n";
+
+        for (int i = 0; i < 3; i++) {
+            cout << i + 1 << " ";
+
+            for (int j = 0; j < 3; j++) {
+                cout << tablero[i][j];
+
+                if (j < 2) {
+                    cout << " | ";
+                }
+            }
+
+            cout << endl;
+
+            if (i < 2) {
+                cout << "  ---+---+---\n";
+            }
+        }
+
+        
+        cout << "\nTurno del jugador " << jugador << endl;
+
+        cout << "Ingresa la fila (1-3): ";
+        cin >> fila;
+
+        cout << "Ingresa la columna (1-3): ";
+        cin >> columna;
+
+        
+        if (fila < 1 || fila > 3 ||
+            columna < 1 || columna > 3) {
+
+            cout << "Posicion invalida. Intenta de nuevo.\n";
+            continue;
+        }
+
+    
+        if (tablero[fila][columna] != ' ') {
+            cout << "La casilla esta ocupada. Intenta de nuevo.\n";
+            continue;
+        }
+
+        
+        tablero[fila][columna] = jugador;
+        jugadas++;
+
+      
+        ganador = false;
+
+        for (int i = 0; i < 3; i++) {
+
+        
+            if (tablero[i][0] == jugador &&
+                tablero[i][1] == jugador &&
+                tablero[i][2] == jugador) {
+                ganador = true;
+            }
+
+          
+            if (tablero[0][i] == jugador &&
+                tablero[1][i] == jugador &&
+                tablero[2][i] == jugador) {
+                ganador = true;
+            }
+        }
+
+        if (tablero[0][0] == jugador &&
+            tablero[1][1] == jugador &&
+            tablero[2][2] == jugador) {
+            ganador = true;
+        }
+
+       
+        if (tablero[0][2] == jugador &&
+            tablero[1][1] == jugador &&
+            tablero[2][0] == jugador) {
+            ganador = true;
+        }
+
+        if (!ganador) {
+            if (jugador == 'X') {
+                jugador = 'O';
+            } else {
+                jugador = 'X';
+            }
+        }
+    }
+
+
+    cout << "\n===== TABLERO FINAL =====\n";
+    cout << "  1   2   3\n";
+
+    for (int i = 0; i < 3; i++) {
+        cout << i + 1 << " ";
+
+        for (int j = 0; j < 3; j++) {
+            cout << tablero[i][j];
+
+            if (j < 2) {
+                cout << " | ";
+            }
+        }
+
+        cout << endl;
+
+        if (i < 2) {
+            cout << "  ---+---+---\n";
+        }
+    }
+
+    if (ganador) {
+        cout << "\n¡Felicidades! El jugador "
+             << jugador << " ha ganado.\n";
+    } else {
+        cout << "\n¡Empate! No quedan casillas libres.\n";
+    }
+
+    return 0;
+}
